@@ -147,7 +147,7 @@ export default function HomePage() {
                             <ItemDisplayCart
                                 key={"e" + i}
                                 item={item}
-                                onClick={removeFromCart(item)}
+                                onItemRemove={removeFromCart(item)}
                             />
                             <Divider key={"d" + i} />
                         </>
@@ -243,12 +243,12 @@ export default function HomePage() {
     );
 }
 
-export function ItemDisplayCart({
+function ItemDisplayCart({
     item,
-    onClick,
+    onItemRemove,
 }: {
     item: Item;
-    onClick?: () => any;
+    onItemRemove?: () => any;
 }) {
     return (
         <Paper key={"i" + item.id} px="md" py="lg">
@@ -263,7 +263,7 @@ export function ItemDisplayCart({
                     </Title>
                 </Stack>
                 <div style={{ flex: 1 }} />
-                <Button variant="subtle" onClick={onClick}>
+                <Button variant="subtle" onClick={onItemRemove}>
                     <IconX />
                 </Button>
             </Group>
