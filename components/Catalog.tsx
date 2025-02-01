@@ -14,7 +14,8 @@ import {
 } from "@mantine/core";
 import { showNotification } from "@mantine/notifications";
 import { IconPlus } from "@tabler/icons-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { API_BASE } from "./Constants";
 
 const ITEM_CATEGORIES = [
     {
@@ -132,19 +133,26 @@ const ITEMS_PLACEHOLDER: Item[] = [
     },
 ];
 
-export default function Catalog() {
-    const [items, setItems] = useState<Item[]>(ITEMS_PLACEHOLDER);
-
+export default function Catalog({
+    onCartAdd,
+}: {
+    onCartAdd: (item: Item) => any;
+}) {
+    const [items, setItems] = useState<Item[]>([]);
     const [mobileControl, setMobileControl] = useState("all");
 
     function addToCart(item: Item) {
         return () => {
-            showNotification({
-                title: "Товар добавлен в корзину",
-                message: `${item.title} (${item.price} руб.)`,
-            });
+            onCartAdd(item);
         };
     }
+
+    function fetchCatalog() {
+        fetch(`${API_BASE}/items`)
+            .then((res) => res.json())
+            .then((data) => setItems(data));
+    }
+    useEffect(fetchCatalog, []);
 
     return (
         <Stack maw="75%" gap="xl" align="center">
