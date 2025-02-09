@@ -259,7 +259,13 @@ export function ItemDisplay({
     return (
         <Paper key={item.id} px="md" py="lg">
             <Stack gap="2px" align="center">
-                <Image src={item.image} alt={item.title} w={150} />
+                <Image
+                    src={item.image}
+                    alt={item.title}
+                    maw={150}
+                    mah={150}
+                    fit="contain"
+                />
                 <Title size="lg" fw={300} mt="xs">
                     {item.title}
                 </Title>
@@ -292,7 +298,14 @@ export function ItemDisplayMobile({
     return (
         <Paper key={item.id} px="md" py="lg">
             <Group gap="md" align="center" ta="center">
-                <Image src={item.image} alt={item.title} w={150} />
+                <Image
+                    src={item.image}
+                    alt={item.title}
+                    miw={150}
+                    maw={150}
+                    h={150}
+                    fit="contain"
+                />
                 <Stack gap="xs">
                     <Title size="lg" fw={300}>
                         {item.title}

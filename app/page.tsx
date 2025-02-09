@@ -93,7 +93,8 @@ export default function HomePage() {
                 message: "Добавьте товары в корзину, чтобы оформить заказ",
                 color: "red",
             });
-        if (phone.length == 0 || name.length == 0) return setOrderError(true);
+        if (phone.length != "+7 (9XX) XXX-XX-XX".length || name.length == 0)
+            return setOrderError(true);
 
         setOrderLoading(true);
 
@@ -253,17 +254,41 @@ function ItemDisplayCart({
     return (
         <Paper key={"i" + item.id} px="md" py="lg">
             <Group gap="md" align="center" ta="left">
-                <Image src={item.image} alt={item.title} w={75} />
-                <Stack gap="xs">
-                    <Title size="lg" fw={300}>
+                <Image
+                    key={"img" + item.id}
+                    src={item.image}
+                    alt={item.title}
+                    maw={75}
+                    miw={75}
+                    mah={75}
+                    mih={75}
+                    fit="contain"
+                />
+                <Stack gap="xs" align="center" justify="center">
+                    <Title visibleFrom="md" size="lg" fw={300}>
+                        {item.title}
+                    </Title>
+                    <Title hiddenFrom="md" size="md" fw={300}>
                         {item.title}
                     </Title>
                     <Title size="xs" c="dimmed">
                         {item.price} руб.
                     </Title>
+                    <Button
+                        hiddenFrom="md"
+                        variant="subtle"
+                        onClick={onItemRemove}
+                    >
+                        <IconX />
+                        Удалить
+                    </Button>
                 </Stack>
                 <div style={{ flex: 1 }} />
-                <Button variant="subtle" onClick={onItemRemove}>
+                <Button
+                    visibleFrom="md"
+                    variant="subtle"
+                    onClick={onItemRemove}
+                >
                     <IconX />
                 </Button>
             </Group>
