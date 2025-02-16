@@ -23,7 +23,8 @@ export default function RootLayout({ children }: { children: any }) {
         <html lang="ru" {...mantineHtmlProps}>
             <head>
                 <ColorSchemeScript />
-                <link rel="shortcut icon" href="/favicon.svg" />
+                <link rel="shortcut icon" href="/favicon.png" />
+                <link rel="icon" href="/favicon.png" />
                 <meta
                     name="viewport"
                     content="minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no"
@@ -53,6 +54,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         }}
                     ></iframe>
                 </noscript>
+
+                <script
+                    async
+                    src="https://www.googletagmanager.com/gtag/js?id=G-HNS0X5CHBJ"
+                ></script>
+                <script>
+                    {`window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-HNS0X5CHBJ');`}
+                </script>
 
                 {/* End Google Metrics */}
 
