@@ -14,7 +14,7 @@ import { ModalsProvider } from "@mantine/modals";
 import "./global.css";
 
 export const metadata = {
-    title: "Good Evening Service",
+    title: "Good Evening Service - Доставка Алкоголя СПб",
     description: "Сделаем ваш вечер лучше!",
 };
 
