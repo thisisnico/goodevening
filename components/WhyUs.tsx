@@ -18,7 +18,7 @@ export default function WhyUs() {
                     zIndex: -1,
                 }}
             />
-            <Title ta="center" ff="Segoe UI Bold">
+            <Title order={2} ta="center" ff="Segoe UI Bold">
                 Почему именно мы?
             </Title>
             <Group align="center" visibleFrom="md">
