@@ -16,7 +16,7 @@ export default function Hello() {
                     variant="gradient"
                     component="span"
                 >
-                    Все для идеального вечера
+                    Заказать доставку алкоголя в СПб
                 </Text>
             </Title>
             <Divider color="#fff" size="xs" w="40%" />

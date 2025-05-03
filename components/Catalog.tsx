@@ -11,6 +11,7 @@ import {
     Group,
     SegmentedControl,
     Container,
+    Text,
 } from "@mantine/core";
 import { showNotification } from "@mantine/notifications";
 import { IconPlus } from "@tabler/icons-react";
@@ -266,12 +267,12 @@ export function ItemDisplay({
                     mah={150}
                     fit="contain"
                 />
-                <Title size="lg" fw={300} mt="xs">
+                <Text size="lg" fw={300} mt="xs">
                     {item.title}
-                </Title>
-                <Title size="xs" c="dimmed">
+                </Text>
+                <Text size="xs" c="dimmed">
                     {item.price} руб.
-                </Title>
+                </Text>
                 {onClick && (
                     <Button
                         variant="gradient"
@@ -307,12 +308,12 @@ export function ItemDisplayMobile({
                     fit="contain"
                 />
                 <Stack gap="xs">
-                    <Title size="lg" fw={300}>
+                    <Text size="lg" fw={300}>
                         {item.title}
-                    </Title>
-                    <Title size="xs" c="dimmed">
+                    </Text>
+                    <Text size="xs" c="dimmed">
                         {item.price} руб.
-                    </Title>
+                    </Text>
                     {onClick && (
                         <Button
                             variant="gradient"

@@ -14,8 +14,9 @@ import { ModalsProvider } from "@mantine/modals";
 import "./global.css";
 
 export const metadata = {
-    title: "Good Evening Service - Доставка Алкоголя СПб",
-    description: "Сделаем ваш вечер лучше!",
+    title: "Good Evening Service - Доставка Алкоголя СПбДоставка алкоголя на дом круглосуточно за час в Санкт-Петербурге, ночью и днём — можно заказать 24 / 7",
+    description:
+        "Заказать доставку алкоголя в Санкт-Петербурге. Круглосуточно, привезём быстро. Телефон доставки: +7 (999) 205-34-70",
 };
 
 export default function RootLayout({ children }: { children: any }) {

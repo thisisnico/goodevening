@@ -1,1 +1,1 @@
-export const API_BASE = process.env.API_BASE || "https://nru.goodeveningspb.com/goodevening"
+export const API_BASE = process.env.API_BASE || "https://fwd.goodeveningspb.com/goodevening"
