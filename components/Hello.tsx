@@ -6,9 +6,9 @@ export default function Hello() {
     return (
         <Stack justify="center" align="center" w={"75%"}>
             <Title ta="center" mt={"15%"} size="3em" ff={"Segoe UI Bold"}>
-                <Text inherit variant="gradient" component="span">
+                {/* <Text inherit variant="gradient" component="span">
                     Good Evening Service
-                </Text>
+                </Text> */}
                 <br />
                 <Text
                     inherit
